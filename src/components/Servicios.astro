@@ -1,44 +1,108 @@
 <style>
 .section {
-  padding: 80px 20px;
-  text-align: center;
-  background: #f1f5f9;
-}
-
-.grid {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  min-height: 100vh; /* 🔥 ocupa toda la altura */
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+/* lado izquierdo */
+.left {
+  width: 50%;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* lado derecho */
+.right {
+  width: 50%;
+  width: 50%;
+  height: 100vh; /* 🔥 ocupa todo el alto */
+  overflow: hidden;
+}
+
+/* imagen full */
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 clave */
+}
+
+/* texto */
+.left h2 {
+  margin-bottom: 20px;
+}
+
+.left p {
+  margin-bottom: 40px;
+  opacity: 0.7;
+}
+
+/* lista */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.item {
+  position: relative;
+  padding-left: 25px;
+}
+
+/* punto glow */
+.item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #7c3aed, #22d3ee);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.6);
+}
+
+.item h3 {
+  margin-bottom: 5px;
+}
+
+.item p {
+  margin: 0;
+  opacity: 0.6;
 }
 </style>
 
 <section class="section">
-  <h2>Servicios</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Landing Pages</h3>
-      <p>Diseño enfocado en generar clientes</p>
-    </div>
+  <!-- TEXTO -->
+  <div class="left">
+    <h2>¿Qué puedo hacer por tu negocio?</h2>
+    <p>No solo diseño páginas web, creo herramientas para generar clientes</p>
 
-    <div class="card">
-      <h3>Optimización</h3>
-      <p>Sitios rápidos y eficientes</p>
-    </div>
+    <div class="list">
 
-    <div class="card">
-      <h3>Responsive</h3>
-      <p>Adaptado a todos los dispositivos</p>
+      <div class="item">
+        <h3>Landing pages que convierten</h3>
+        <p>Páginas diseñadas estratégicamente para transformar visitas en clientes</p>
+      </div>
+
+      <div class="item">
+        <h3>Diseño moderno y profesional</h3>
+        <p>Una imagen que genera confianza desde el primer segundo</p>
+      </div>
+
+      <div class="item">
+        <h3>Optimización para velocidad</h3>
+        <p>Sitios rápidos que mejoran la experiencia y posicionamiento</p>
+      </div>
+
     </div>
   </div>
+
+  <!-- IMAGEN -->
+  <div class="right">
+    <img src="/src/images/mockup2.jpg" alt="Servicios web" />
+  </div>
+
 </section>
