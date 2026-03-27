@@ -1,0 +1,80 @@
+:root {
+  --color-primary: #0f172a;
+  --color-secondary: #1e293b;
+  --color-accent: #22c55e;
+  --color-light: #f1f5f9;
+  --color-white: #ffffff;
+  --color-text: #0f172a;
+
+  --gradient-primary: linear-gradient(90deg, #7c3aed, #22d3ee);
+
+  --bg-dark: #0f172a;
+  --bg-secondary: #1e293b;
+
+  --primary-neon: #7c3aed;   /* morado */
+  --secondary-neon: #22d3ee; /* azul cyan */
+
+  --text-white: #ffffff;
+  --text-muted: #94a3b8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--color-light);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  opacity: 1;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  opacity: 0.7;
+}
+
+.btn {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  background: var(--gradient-primary);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+/* capa animada */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #7c3aed, #22d3ee, #7c3aed);
+  background-size: 200% 200%;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+/* hover animado */
+.btn:hover::before {
+  animation: gradientMove 3s linear infinite;
+}
+
+/* animación */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
