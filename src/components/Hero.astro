@@ -1,5 +1,21 @@
 <style>
 .hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%);
+  top: 20%;
+  left: 10%;
+  filter: blur(80px);
+}
+
+.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,12 +57,20 @@
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
   color: white;
   padding: 14px 26px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 20px rgba(37, 99, 235, 0.3),
+    0 0 20px rgba(37, 99, 235, 0.4);
 }
 
 .btn-secondary {
@@ -55,6 +79,18 @@
   border-radius: 8px;
   color: var(--text-primary);
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #2563EB;
+  color: #2563EB;
+}
+
+.trust {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 /* imagen */
@@ -70,18 +106,22 @@
     <p class="badge">NexByte</p>
 
     <h1>
-      Soporte Técnico & Desarrollo Web<br>
-      en un solo lugar
+      Consigue más clientes con una web que vende por ti
     </h1>
 
     <p>
-      Soluciono problemas en tus equipos y creo páginas web que generan clientes para tu negocio.
+      Diseño páginas rápidas, modernas y optimizadas para que tu negocio venda más desde internet.
     </p>
 
     <div class="hero-buttons">
-      <a href="#" class="btn-primary">Contactar</a>
+      <a href="#" class="btn-primary">Cotizar</a>
       <a href="#" class="btn-secondary">Ver servicios</a>
     </div>
+
+    <p class="trust">
+    ⚡ Rápido • 💻 Profesional • 🚀 Enfocado en ventas
+    </p>
+    
   </div>
 
   <div class="hero-image">
