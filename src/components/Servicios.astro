@@ -1,108 +1,57 @@
+---
+import Card from './Card.astro';
+---
+
+<h2>Servicios enfocados en rendimiento y resultados</h2>
+<p>
+  Desarrollo sitios web estáticos rápidos, seguros y optimizados para convertir visitantes en clientes.
+</p>
+
+<section class="servicios">
+  <Card 
+  titulo="Landing Pages"
+  descripcion="Diseño de páginas enfocadas en convertir visitantes en clientes"
+  >
+  <ul>
+    <li>⚡ Carga ultra rápida</li>
+    <li>📱 Diseño responsive</li>
+    <li>🚀 Optimización SEO básica</li>
+  </ul>
+
+  <a slot="acciones" href="#" class="btn">Solicitar</a>
+  </Card>
+
+  <Card 
+  titulo="Sitios Web Estáticos"
+  descripcion="Webs modernas sin backend, seguras y de alto rendimiento"
+  >
+  <ul>
+    <li>🔒 Mayor seguridad (sin base de datos)</li>
+    <li>⚡ Velocidad superior</li>
+    <li>💰 Menor costo de mantenimiento</li>
+  </ul>
+
+  <a slot="acciones" href="#" class="btn">Solicitar</a>
+  </Card>
+
+  <Card 
+  titulo="Web Corporativa"
+  descripcion="Presencia profesional para tu negocio en internet"
+  >
+  <ul>
+    <li>🎯 Enfoque en marca</li>
+    <li>📈 Escalable</li>
+    <li>🌐 Lista para producción</li>
+  </ul>
+
+  <a slot="acciones" href="#" class="btn">Solicitar</a>
+  </Card>
+</section>
+
 <style>
-.section {
-  display: flex;
-  min-height: 100vh; /* 🔥 ocupa toda la altura */
-}
-
-/* lado izquierdo */
-.left {
-  width: 50%;
-  padding: 100px 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* lado derecho */
-.right {
-  width: 50%;
-  width: 50%;
-  height: 100vh; /* 🔥 ocupa todo el alto */
-  overflow: hidden;
-}
-
-/* imagen full */
-.right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 🔥 clave */
-}
-
-/* texto */
-.left h2 {
-  margin-bottom: 20px;
-}
-
-.left p {
-  margin-bottom: 40px;
-  opacity: 0.7;
-}
-
-/* lista */
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.item {
-  position: relative;
-  padding-left: 25px;
-}
-
-/* punto glow */
-.item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #7c3aed, #22d3ee);
-  box-shadow: 0 0 10px rgba(124, 58, 237, 0.6);
-}
-
-.item h3 {
-  margin-bottom: 5px;
-}
-
-.item p {
-  margin: 0;
-  opacity: 0.6;
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 </style>
-
-<section class="section">
-
-  <!-- TEXTO -->
-  <div class="left">
-    <h2>¿Qué puedo hacer por tu negocio?</h2>
-    <p>No solo diseño páginas web, creo herramientas para generar clientes</p>
-
-    <div class="list">
-
-      <div class="item">
-        <h3>Landing pages que convierten</h3>
-        <p>Páginas diseñadas estratégicamente para transformar visitas en clientes</p>
-      </div>
-
-      <div class="item">
-        <h3>Diseño moderno y profesional</h3>
-        <p>Una imagen que genera confianza desde el primer segundo</p>
-      </div>
-
-      <div class="item">
-        <h3>Optimización para velocidad</h3>
-        <p>Sitios rápidos que mejoran la experiencia y posicionamiento</p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- IMAGEN -->
-  <div class="right">
-    <img src="/src/images/mockup2.jpg" alt="Servicios web" />
-  </div>
-
-</section>
