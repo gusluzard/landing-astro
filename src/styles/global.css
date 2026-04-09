@@ -8,57 +8,70 @@
   --accent: #2563EB;
 
   --border: #1E293B;
+
+  /* extras glow */
+  --purple: #7c3aed;
+  --cyan: #22d3ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(124,58,237,0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(34,211,238,0.15),
+      transparent 40%
+    ),
+    #020617;
+  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
-  background: var(--color-light);
-  color: var(--color-text);
 }
 
-h1 {
-  font-size: 3rem;
-  font-family: 'Playfair Display', serif;
-  opacity: 1;
+h1, h2, h3, .logo {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-h2 {
-  font-size: 2.2rem;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 120px 0;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
 }
 
 p {
-  max-width: 600px;
-  margin: 0 auto 20px;
-  opacity: 0.7;
+  color: var(--text-secondary);
 }
 
 .btn {
   position: relative;
   padding: 15px 30px;
   border-radius: 10px;
-  text-decoration: none;
   color: white;
-  display: inline-block;
   font-weight: 600;
-  transition: all 0.3s;
   border: 1px solid rgba(255,255,255,0.1);
-
-  overflow: hidden;   /* 🔥 clave */
-  z-index: 1;         /* 🔥 clave */
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-
-  /* glow principal */
-  box-shadow:
-    0 0 10px rgba(124, 58, 237, 0.6),
-    0 0 20px rgba(34, 211, 238, 0.5),
-    0 0 40px rgba(124, 58, 237, 0.4);
-}
-
-/* capa animada */
 .btn::before {
   content: "";
   position: absolute;
@@ -66,10 +79,8 @@ p {
   background: linear-gradient(120deg, #7c3aed, #22d3ee, #7c3aed);
   background-size: 200% 200%;
   z-index: -1;
-  transition: 0.5s;
 }
 
-/* hover animado */
 .btn:hover::before {
   animation: gradientMove 3s linear infinite;
 }
@@ -92,12 +103,40 @@ p {
   }
 }
 
-/* animación */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  margin: 80px 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 58, 237, 0.5),
+    rgba(34, 211, 238, 0.5),
+    transparent
+  );
+
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 58, 237, 0.3),
+    rgba(34, 211, 238, 0.3),
+    transparent
+  );
+
+  filter: blur(20px);
+  opacity: 0.6;
 }

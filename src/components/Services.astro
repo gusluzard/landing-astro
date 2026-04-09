@@ -1,0 +1,199 @@
+<section class="services container">
+  <div class="services-header">
+    <h2>Tipos de sitios que creo</h2>
+    <p>
+      Soluciones web estáticas diseñadas para distintos objetivos.
+      Elige el tipo de sitio que mejor se adapte a tu negocio.
+    </p>
+  </div>
+
+  <div class="services-grid">
+  <div class="service-card">
+    <div class="icon-wrapper">
+      <span>🚀</span>
+    </div>
+    <h3>Landing Pages</h3>
+    <p>Ideales para captar clientes y convertir visitas en ventas.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon-wrapper">
+      <span>🎓</span>
+    </div>
+    <h3>Sitios educativos</h3>
+    <p>Perfectos para cursos, academias o contenido formativo.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon-wrapper">
+      <span>📝</span>
+    </div>
+    <h3>Blogs</h3>
+    <p>Optimizados para SEO y creación constante de contenido.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon-wrapper">
+      <span>💼</span>
+    </div>
+    <h3>Portafolios</h3>
+    <p>Muestra tu trabajo de forma profesional y atractiva.</p>
+  </div>
+
+  <div class="service-card">
+    <div class="icon-wrapper">
+      <span>🏢</span>
+    </div>
+    <h3>Sitios corporativos</h3>
+    <p>Presencia digital sólida para empresas modernas.</p>
+  </div>
+</div>
+
+</section>
+
+<style>
+  .services-header {
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+
+.services-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  color: var(--text-secondary);
+}
+
+/* GRID */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+
+.service-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(124,58,237,0.15),
+    transparent 60%
+  );
+
+  opacity: 0;
+  transition: 0.4s;
+}
+
+
+/* HOVER PRO */
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+
+  border-color: rgba(124,58,237,0.4);
+
+  box-shadow:
+    0 0 25px rgba(124,58,237,0.25),
+    0 0 60px rgba(34,211,238,0.15);
+  
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(124,58,237,0.15),
+    transparent 40%
+  );
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.services-grid:hover .service-card {
+  opacity: 0.5;
+}
+
+.services-grid .service-card:hover {
+  opacity: 1;
+}
+
+
+/* ICONO */
+
+.icon {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(124,58,237,0.3),
+    rgba(34,211,238,0.3)
+  );
+
+  box-shadow:
+    0 0 15px rgba(124,58,237,0.3),
+    0 0 30px rgba(34,211,238,0.2);
+
+  transition: 0.3s;
+}
+
+/* icon animado */
+
+.service-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* TITULO */
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* TEXTO */
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>

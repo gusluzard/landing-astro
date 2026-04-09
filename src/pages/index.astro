@@ -1,18 +1,24 @@
 ---
-import "../styles/global.css";
+import MainLayout from "../layouts/MainLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
-import Servicios from "../components/Servicios.astro";
-import Beneficios from "../components/Beneficios.astro";
-import CTA from "../components/CTA.astro";
+import Services from "../components/Services.astro";
+import Benefits from "../components/Benefits.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8" />
-</head>
 
-<Navbar />
-<Hero />
-<Servicios />
-<Beneficios />
-<CTA />
+<MainLayout>
+  <Navbar />
+  <Hero />
+  <div class="section-divider"></div>
+  <Services />
+  <div class="section-divider"></div>
+  <Benefits />
+  <div class="section-divider"></div>
+  <Testimonials />
+  <div class="section-divider"></div>
+  <Contact />
+  <Footer />
+</MainLayout>

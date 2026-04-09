@@ -1,45 +1,101 @@
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="logo">Nex<span>.</span>Byte</div>
+
+    <ul class="menu">
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Beneficios</a></li>
+      <li><a href="#">Trabajos</a></li>
+      <li><a href="#">Testimonios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+
+    <a class="btn">Hablemos →</a>
+  </div>
+</nav>
+
 <style>
-.navbar {
+/* ================= NAVBAR BASE ================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(12px);
+  background: rgba(2, 6, 23, 0.6);
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
-  background: var(--bg-primary);
+  justify-content: space-between;
+  padding: 20px 0;
 }
 
-/* logo */
-.logo-text {
-  font-family: 'Space Grotesk', sans-serif;
+/* ================= LOGO ================= */
+
+.logo {
   font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--text-primary);
-  letter-spacing: -0.5px;
+  font-size: 30px;
 }
 
-/* punto Nex. */
-.dot {
+.logo span {
   color: var(--accent);
 }
 
-/* botón */
-.btn-primary {
-  background: var(--accent);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
+/* ================= MENU ================= */
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu a {
+  position: relative;
   text-decoration: none;
+  color: var(--text-secondary);
   font-weight: 500;
+  opacity: 0.8;
+
+  transition: all 0.3s ease;
+}
+
+/* 🔥 HOVER TEXTO */
+
+.menu a:hover {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+/* 🔥 LÍNEA ANIMADA */
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(90deg, #7c3aed, #22d3ee);
+
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* 💎 EFECTO GLOW SUTIL */
+
+.menu a:hover {
+  text-shadow:
+    0 0 8px rgba(124,58,237,0.6),
+    0 0 12px rgba(34,211,238,0.4);
 }
 </style>
-
-<nav class="navbar">
-  
-  <div class="logo">
-    <span class="logo-text">
-      Nex<span class="dot">.</span>Byte
-    </span>
-  </div>
-
-  <a href="#" class="btn-primary">Contactar</a>
-
-</nav>
