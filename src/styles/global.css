@@ -124,6 +124,13 @@ p {
   position: relative;
 }
 
+
+.section-divider.divider-superior {
+  margin: 80px 0 0 0;
+}
+.section-divider.divider-inferior {
+  margin: 0 0 80px 0;
+}
 .section-divider::after {
   content: "";
   position: absolute;
